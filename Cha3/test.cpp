@@ -42,4 +42,6 @@ int main() {
     auto it = s.begin();
     *it = toupper(*it);
   }
+
+  string rs = R"(d\t\d)";
 }
