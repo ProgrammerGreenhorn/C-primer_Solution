@@ -8,7 +8,7 @@ int main(int argc, char **argv) {
         throw std::runtime_error("Division by zero is not allowed!\n");
       }
       std::cout << a / b << std::endl;
-    } catch (std::runtime_error &err) {
+    } catch (const std::runtime_error &err) {
       std::cout << err.what() << "Try again? Press y or n" << std::endl;
       char c;
       std::cin >> c;
