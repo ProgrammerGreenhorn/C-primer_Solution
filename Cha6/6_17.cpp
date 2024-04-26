@@ -15,3 +15,5 @@ void toLower(std::string &s) {
     c = tolower(c);
   }
 }
+
+int main() { return 0; }
