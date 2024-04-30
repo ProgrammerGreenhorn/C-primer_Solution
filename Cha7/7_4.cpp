@@ -18,6 +18,7 @@ public:
   Person() = default;
   Person(const std::string &n, const std::string &h) : name(n), house(h){};
   Person(const std::string &n) : name(n){};
+  explicit Person(std::istream &is) : Person("", "") { is >> this->name >> this->house; }
   // constructor function
 
   str getName() const;

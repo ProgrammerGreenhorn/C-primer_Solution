@@ -4,9 +4,12 @@
 class Screen {
 public:
   using pos = std::string::size_type;
+  // constructor
   Screen() = default;
   Screen(pos h, pos w) : height(h), width(w), contents(h * w, ' '){};
   Screen(pos h, pos w, char c) : height(h), width(w), contents{c} {};
+  // constructor
+
 
   // get the content of the cursor
   char get() const;
@@ -14,9 +17,11 @@ public:
   // move the cursor
   Screen &move(pos, pos);
 
+
   // set the content of cursor or the specificated place
   Screen &set(char);
   Screen &set(pos, pos, char);
+
 
   // display the contents
   Screen &display(std::ostream &);

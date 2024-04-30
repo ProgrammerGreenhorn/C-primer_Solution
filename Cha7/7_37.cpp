@@ -6,3 +6,5 @@ public:
 private:
   int year, month, day;
 };
+
+int main() { return 0; };
