@@ -7,6 +7,7 @@ struct X {
     std::cout << "operator=(const X&)" << std::endl;
     return *this;
   }
+  // des
   ~X() { std::cout << "~X()" << std::endl; }
 };
 

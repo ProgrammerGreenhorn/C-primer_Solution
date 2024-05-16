@@ -24,7 +24,11 @@ hasPtr::hasPtr(const hasPtr &hp) : ps(new string(*(hp.ps))), i(hp.i) {}
 
 // operator =
 hasPtr &hasPtr::operator=(const hasPtr &hp) {
-  this->ps = new string(*(hp.ps));
+  // use temp to let p1=p1 can successfully pass;
+  auto temp = new std::string(*(hp.ps));
+  // need to delete its own string;
+  delete this->ps;
+  this->ps = temp;
   this->i = hp.i;
   return *this;
 }
