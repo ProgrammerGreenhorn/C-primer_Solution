@@ -2,6 +2,7 @@
 
 #include <cmath>
 #include <cstddef>
+#include <ios>
 #include <iostream>
 #include <list>
 #include <random>
@@ -35,23 +36,27 @@ int main() {
     std::cout << u(e) << std::endl;
   }
 
-  std::uniform_real_distribution<double> u2(0,1);
-    for (size_t i = 0; i < 10; ++i) {
+  std::uniform_real_distribution<double> u2(0, 1);
+  for (size_t i = 0; i < 10; ++i) {
     std::cout << u2(e) << std::endl;
   }
 
-  std::normal_distribution<> n(4,1.5);
+  std::normal_distribution<> n(4, 1.5);
   std::vector<unsigned> vals(9);
 
-  for(size_t i = 0;i!=200;++i){
-    unsigned v  = std::lround(n(e));
+  for (size_t i = 0; i != 200; ++i) {
+    unsigned v = std::lround(n(e));
 
-    if(v < vals.size()){
-        ++vals[v];
+    if (v < vals.size()) {
+      ++vals[v];
     }
   }
-  for(size_t i = 0;i!=vals.size();++i){
-    std::cout<<i<<": "<<std::string(vals[i],'*')<<std::endl;
+  for (size_t i = 0; i != vals.size(); ++i) {
+    std::cout << i << ": " << std::string(vals[i], '*') << std::endl;
   }
+
+  std::cout << std::boolalpha << true << " " << false << std::endl;
+
+  std::cout << std::showbase <<std::hex<< 1024 << std::endl;
   return 0;
 }
